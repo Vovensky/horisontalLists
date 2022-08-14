@@ -51,6 +51,7 @@ export default {
 
 <style lang='sass' scoped>
 .headPanel
+    z-index: 9999
     width: 100%
     background-color: #143861
     position: fixed

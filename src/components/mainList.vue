@@ -59,16 +59,17 @@ export default {
 <style lang='scss'>
 .container_mainList {
     border: 1px solid black;
-    width: 60%;
+    width: 60vw;
     height: 100%;
     margin: 0 auto;
     background-color: black;
     padding: 50px;
     box-sizing: border-box;
     overflow-y: auto;
+    border: none;
 
-    @media screen and (max-width: 1000px) {
-        width: 100%; 
+    @media screen and (max-width: 1200px) {
+        width: 100vw; 
         margin: 0;
         padding: 0;
     }
