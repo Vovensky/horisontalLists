@@ -64,7 +64,6 @@ export default {
     created() {
         // this.$store.dispatch('loadFilmsInfo', this.genre);
         // this.loadFilmsInfo(this.genre
-        window.addEventListener('resize', this.filmNameSize)
     },
     computed: {
         // ...mapGetters([
@@ -156,8 +155,6 @@ export default {
         text-align: left
         @media screen and (max-width: 400px)
             font-size: 5vw
-
-        .filmName
 
     .filmCard-filmInformation-film_info
         padding: 10px 0px

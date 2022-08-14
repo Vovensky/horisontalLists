@@ -1,8 +1,10 @@
 <template>
 <div style='display: block; width: 100%; height: 100px'>
     <div class='headPanel'>
-        <div class='inputPanel'>
-            <input class='input' placeholder='Поиск по всем категориям'/>
+        <div class='headpanel-content'>
+            <div class='input-panel'>
+                <input class='input' placeholder='Поиск по всем категориям'/>
+            </div>
             <div ref='filters' class='inputPanel__filters' @mouseenter='mouseOver'>
                 <div class='inputPanel__filter' v-for='obj of buttonTitles' :key='obj.genre'> {{obj.title}} </div>
             </div>
@@ -12,8 +14,6 @@
 </template>
 
 <script>
-// import { defineComponent } from '@vue/composition-api'
-
 export default {
     name: 'SearchPanel',
     props: ['buttonTitles'],
@@ -58,22 +58,19 @@ export default {
     display: flex
     justify-content: center
     align-items: center
-    padding: 20px
     padding-bottom: 0
     box-sizing: border-box
     margin: 0
-    @media screen and (max-width: 1000px)
-        width: 100%; 
-        padding: 0;
-        margin: 0;
 
-.inputPanel
+.headpanel-content
     display: relative
     width: 60%;
-    padding-bottom: 30px
     display: block;
-    @media screen and (max-width: 1000px)
+    @media screen and (max-width: 1368px)
         width: 100%; 
+
+.input-panel
+    padding: 20px 0px
 
 .input
     text-align: left
@@ -91,17 +88,16 @@ export default {
     justify-content: left;
     align-items: left;
     color: white
-    margin-top: 20px
+    padding-bottom: 20px
     overflow-x: auto
-    @media screen and (max-width: 1000px)
-        width: 100%; 
+    @media screen and (max-width: 1368px)
+        width: 90%; 
 
 .inputPanel__filters::-webkit-scrollbar
     display: none;
 
 .inputPanel__filter
     margin: 0px 5px
-    margin-bottom: 20px
     border-radius: 10px
     display: flex
     flex: 1
