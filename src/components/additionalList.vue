@@ -50,7 +50,6 @@ export default {
             let target = event.target
             target.addEventListener('wheel', function(e) {
                let filmCardOffsetWidth = document.querySelector('.film-gallery_card').offsetWidth;
-               console.log(` filmCardOffsetWidth ${filmCardOffsetWidth}`)
                let filmGallery = vm.$refs.gallery.scrollWidth
                let filmList = vm.$refs.listContent.offsetWidth
                if(e.deltaY > 0) {
