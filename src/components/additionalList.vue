@@ -35,6 +35,11 @@ export default {
             type: Object
         },
     },
+    data() {
+        return {
+            poistion: 0,
+        }
+    },
     methods: {
         // ...mapActions([
         //     'loadFilmsInfo'
@@ -45,7 +50,8 @@ export default {
             let target = event.target
             target.addEventListener('wheel', function(e) {
                let filmCardOffsetWidth = document.querySelector('.film-gallery_card').offsetWidth;
-               let filmGallery = vm.$refs.gallery.offsetWidth
+               console.log(` filmCardOffsetWidth ${filmCardOffsetWidth}`)
+               let filmGallery = vm.$refs.gallery.scrollWidth
                let filmList = vm.$refs.listContent.offsetWidth
                if(e.deltaY > 0) {
                 position -= filmCardOffsetWidth + 20
@@ -56,6 +62,7 @@ export default {
                 position = Math.min( 0, position)
                 vm.$refs.gallery.style.transform = `translateX(${position + 'px'})`
                }
+               
                e.preventDefault ? e.preventDefault() : (e.returnValue = false);
             })
         },
@@ -107,7 +114,7 @@ export default {
         text-align: left
         flex-wrap: nowrap
         position: relative
-        overflow-x: auto
+        overflow-x: scroll
         &::-webkit-scrollbar
             display: none
 
