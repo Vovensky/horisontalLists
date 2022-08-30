@@ -2,23 +2,18 @@
 
 ## Project setup
 ```
-npm install
+Вертикальный список, у которого каждая строка представляет собой горизонтальный список. 
+Вверху страницы отображается шторка с быстрыми фильтрами, которая сворачивается при прокрутке вертикального списка вниз, и появляется при прокрутке вертикального списка вверх.
 ```
 
-### Compiles and hot-reloads for development
+### Технологии, использованные при написании проекта.
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+1. HTML: flexbox;
+2. Sass;
+3. JS (es6): EventListener, axios, objects methods, fetch, Promises
+4. Vuex;
+5. Axios;
+6. Fetch
+7. Реализован класс для плавной прокрутки по горизонтали
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

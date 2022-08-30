@@ -4,7 +4,7 @@
     <div class='title'>
         <span>{{genre.title}}</span>
     </div>
-    <div class='horisontal-list-content' ref='listContent' @mouseenter='mouseOver'
+    <div class='horisontal-list-content' ref='listContent' @mouseenter='mouseOver' @mouseleave='mouseLeave'
     v-if='films'>
         <div class='film-gallery' ref='gallery'>
             <div class='film-gallery_card' v-for='film of films' :key='film'>
@@ -20,13 +20,14 @@
             </div>
         </div>
     </div>
+    
 </div>
 </template>
 
 <script>
 // import { mapActions, mapGetters} from 'vuex'
 import data from '@/data.js'
-
+import Scroller from '@/plugins/wheeller.js'
 
 export default {
     name: 'additionalList',
@@ -45,36 +46,29 @@ export default {
         //     'loadFilmsInfo'
         // ]),
         mouseOver(event) {
-            let vm = this
-            let position = 0;
-            let target = event.target
-            target.addEventListener('wheel', function(e) {
-               let filmCardOffsetWidth = document.querySelector('.film-gallery_card').offsetWidth;
-               let filmGallery = vm.$refs.gallery.scrollWidth
-               let filmList = vm.$refs.listContent.offsetWidth
-               if(e.deltaY > 0) {
-                position -= filmCardOffsetWidth + 20
-                position = Math.max(-(filmGallery-filmList), position)
-                vm.$refs.gallery.style.transform = `translateX(${position + 'px'})`
-               } else {
-                position += filmCardOffsetWidth + 20
-                position = Math.min( 0, position)
-                vm.$refs.gallery.style.transform = `translateX(${position + 'px'})`
-               }
-               
-               e.preventDefault ? e.preventDefault() : (e.returnValue = false);
-            })
+            let target = event.target;
+            target.addEventListener('wheel', this.scroller)
         },
-        
+        mouseLeave(event) {
+            event.target.removeEventListener('wheel', this.scroller)
+        },
     },
     created() {
         // this.$store.dispatch('loadFilmsInfo', this.genre);
         // this.loadFilmsInfo(this.genre
+        this.actGenre = this.genre.genre
+        
     },
     computed: {
         // ...mapGetters([
         //     'getFilmsInfo'
         // ]),
+
+        scroller() {
+            let child = document.querySelector('.film-gallery_card')
+            let parent = this.$refs.gallery
+            return new Scroller(this, child, parent)
+        },
        films() {
             // let vm = this
             // let store = vm.$store.state[vm.genre.genre]
@@ -109,7 +103,6 @@ export default {
     .horisontal-list-content
         width: 100%
         box-sizing: border-box
-        display: flex
         text-align: left
         flex-wrap: nowrap
         position: relative

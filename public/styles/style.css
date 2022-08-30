@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'genres';
+  src:  url('../fonts/genres.eot?n83yvp');
+  src:  
+    url('../fonts/genres.eot?n83yvp#iefix') format('embedded-opentype'),
+    url('../fonts/genres.ttf?n83yvp') format('truetype'),
+    url('../fonts/genres.woff?n83yvp') format('woff'),
+    url('../fonts/genres.svg?n83yvp#genres') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: inline-block;
+}
+
+[class^="_icon-"]::before, 
+[class*=" _icon-"]::before {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'genres' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+._icon-Boeviki:before {
+  content: "\e900";
+}
+._icon-Melodramma:before {
+  content: "\e901";
+}
+._icon-Comedy:before {
+  content: "\e903";
+}
+._icon-Dramatic:before {
+  content: "\e904";
+}
+._icon-Criminal:before {
+  content: "\e905";
+}
+._icon-Thriller:before {
+  content: "\e906";
+}
+._icon-horror:before {
+  content: "\e908";
+}

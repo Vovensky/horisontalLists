@@ -39,7 +39,7 @@ export default {
                     mask: 11,
                     genre: 'Boeviki',},
                 {
-                    title: 'Комедия',
+                    title: 'Комедии',
                     mask: 13,
                     genre: 'Comedy',},
                 {
@@ -49,14 +49,18 @@ export default {
                 ],
         }
     },
-    methods: {
-    },
-    created() {
-    }   
 }
 </script>
 
 <style lang='scss'>
+.link {
+    display: block;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    background-color: white
+}
+
 .container_mainList {
     border: 1px solid black;
     width: 60vw;
@@ -67,6 +71,7 @@ export default {
     box-sizing: border-box;
     overflow-y: auto;
     border: none;
+    display: block;
 
     @media screen and (max-width: 1200px) {
         width: 100vw; 

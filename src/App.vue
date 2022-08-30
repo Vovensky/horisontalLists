@@ -41,7 +41,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 6px;
+    width: 2px;
     height: 8px ;
     background-color: black;
 }
@@ -49,7 +49,7 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
     background-color: #843465;
     border-radius: 9em;
-    box-shadow: inset 1px 1px 10px #f3faf7;
+    box-shadow: inset 1px 1px 10px black;
 }
 
 body::-webkit-scrollbar-thumb:hover {
