@@ -38,7 +38,6 @@ class Scroller {
                 vm.parentNode.style.transform = `translateX(${vm.position + 'px'})`
             }
         }
-        console.log(vm.leftElement)
     }
 }
 
